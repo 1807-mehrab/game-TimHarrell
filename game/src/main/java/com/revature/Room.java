@@ -1,4 +1,4 @@
-package Game;
+package com.revature;
 
 public class Room {
     private String name;

@@ -1,4 +1,4 @@
-package Game;
+package com.revature;
 import java.util.Random;
 public class Start {
 
