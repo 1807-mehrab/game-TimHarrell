@@ -6,7 +6,7 @@ public class Monster {
 	private int strength;
 	private int health;
 	
-	private final String[] names = {
+	private static final String[] names = {
 			"monster0",
 			"monster1",
 			"monster2",
@@ -14,7 +14,7 @@ public class Monster {
 			"monster4"
 	};
 	
-	private final String[] speeches = {
+	private static final String[] speeches = {
 		"monster0 desc",
 		"monster1 desc",
 		"monster2 desc",
@@ -22,7 +22,7 @@ public class Monster {
 		"monster4 desc"
 	};
 	
-	private final int[] strengths =  {
+	private static final int[] strengths =  {
 		1,
 		2,
 		3,
@@ -30,7 +30,7 @@ public class Monster {
 		5
 	};
 	
-	private final int[] healths =  {
+	private static final int[] healths =  {
 		10,
 		15,
 		20,
@@ -64,6 +64,14 @@ public class Monster {
 		return health;
 	}
 	
+	public String getName() {
+		return name;
+	}
+	
+	public void talk() {
+		System.out.println("I am a " + name + ".");
+		System.out.println(speech);
+	}
 	Monster(int input) {
 		this.name = generateName(input);
 		this.speech = generateSpeech(input);
