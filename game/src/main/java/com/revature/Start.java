@@ -2,31 +2,30 @@ package com.revature;
 import java.util.Random;
 public class Start {
 
-	private String generateDescription() {
-		String[] temp = new String[5];
-		temp[0] = "room0";
-		temp[1] = "room1";
-		temp[2] = "room2";
-		temp[3] = "room3";
-		temp[4] = "room4";
+	private Room startRoom;
+	
+	
+	public static void start() {
 		
+	}
+	
+	private void makeAllRooms() {
+		startRoom = new Room();
+	}
+	private Room makeRooms() {
 		Random rand = new Random();
-		int random = rand.nextInt();
+		int random = rand.nextInt() % 3;
 		
-		
-		return temp[random];
+		if(random == 0) {
+			
+		}
 	}
 	
-	public static start() {
-		
-	}
 	
-	public static Room makeRooms() {
-		
-	}
 	
-	public static Room makeRoom() {
-		Room temp = new Room();
+	private Room generateRooms() {
+		startRoom = new Room();
 		
+		return startRoom;
 	}
 }
