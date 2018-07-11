@@ -1,3 +1,5 @@
+package Game;
+
 public class Room {
     private String name;
     private Room []next;
@@ -16,9 +18,14 @@ public class Room {
         next = args;
     }
 
+    Room() {
+    	name ="";
+    	description="";
+    }
+    
     Room(String name, String desc, Room ...args) {
         setName(name);
         setDescription(desc);
-        setNextRoom(args);
+        setNextRooms(args);
     }
 }
