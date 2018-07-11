@@ -9,6 +9,7 @@ public class Room {
     private Room parent;
     private Monster monster;
     private Boolean lastRoom;
+    private final int NUMBERNEXTS = 2;
     private final String[] names = {
     		"room0", 
     		"room1", 
@@ -57,10 +58,20 @@ public class Room {
     public Boolean isMonsterPresent() {
     	return monster != null;
     }
+    
+   public void setNext(Room ...args) {
+    	next = args;
+    }
+    
     Room() {
     	name ="Start Room";
     	description="The room you start in.";
+    	parent = null;
+    	monster = null;
+    	lastRoom = false;
     }
+    
+   
     
     Room(Room parent, Boolean lastRoom) {
     	Random rand = new Random();
@@ -69,5 +80,8 @@ public class Room {
         name = names[random];
         description = descriptions[random];
         this.lastRoom = lastRoom;
+        next = new Room[3];
+       
+        
     }
 }

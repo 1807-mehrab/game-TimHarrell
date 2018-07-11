@@ -12,17 +12,28 @@ public class Start {
 	private void makeAllRooms() {
 		startRoom = new Room();
 	}
-	private Room makeRooms(Room start) {
+	private void makeRooms(Room start) {
 		Random rand = new Random();
-		int random = rand.nextInt() % 5;
+		int random = rand.nextInt() % 3;
 		
-		if(random < 1) {
+		if(random == 0) {
+			start.setAsLastRoom();
+		}
+		else if(random == 1){
+			Room temp = new Room(start, false);
+			temp.setParent(start);
+		}
+		else if(random == 2) {
+			Room temp1 = new Room(start, false);
+			temp1.setParent(start);
+			temp1.setNexts()
+			Room temp2 = new Room(start, false);
+			temp2.setParent(start);
+		}
+		else if(random == 3) {
 			
 		}
-		else {
-			Room temp = new Room(start, false);
-			return .setParent(temp);
-		}
+		
 	}
 	
 	private Monster generateMonster() {
@@ -35,7 +46,7 @@ public class Start {
 	private Room generateRooms() {
 		startRoom = new Room();
 		
-		makeRooms();
+		makeRooms(startRoom);
 		return startRoom;
 	}
 }
