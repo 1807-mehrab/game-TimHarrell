@@ -15,18 +15,19 @@ public class Start {
 			
 			currRoom.MonsterTalk();
 			fight();
-			Scanner in = new Scanner(System.in);
-			System.out.println("type 1 to go left or 2 to go right. type 3 to go back");
-			int input = in.nextInt();
-			exit = checkOptions(input);
+			exit = checkOptions();
 			
 		}
 		
 		System.out.println("That's the last room. \nGAME OVER");
 	}
 	
-	private Boolean checkOptions(int input) {
+	private Boolean checkOptions() {
 		if(!currRoom.isLastRoom()) {
+			System.out.println("type 1 to go left or 2 to go right. type 3 to go back");
+			Scanner in = new Scanner(System.in);
+			int input = in.nextInt();
+			
 			if(input == 1) {
 				if(currRoom.hasLeft()) {
 					System.out.println("you went left");
@@ -36,8 +37,7 @@ public class Start {
 					System.out.println("Fake door. Choose another route.");
 				}
 			}
-			
-			if(input == 2) {
+			else if(input == 2) {
 				if(currRoom.hasRight()) {
 					System.out.println("you went right");
 					currRoom = currRoom.right();
@@ -46,7 +46,7 @@ public class Start {
 					System.out.println("Fake door. Choose another route.");
 				}
 			}
-			if(input == 3) {
+			else if(input == 3) {
 				if(currRoom.hasParent()) {
 					System.out.println("you went back");
 					currRoom = currRoom.parent();
@@ -56,16 +56,18 @@ public class Start {
 				}
 			}
 			else {
-				System.out.println("Invalid, try again.");
+				System.out.println("invalid input.");
 			}
+			
 			
 			return false;
 		}
 		else {
 			
-			if(currRoom.isMonsterDead() && currRoom.isLastRoom()) {
+			if(currRoom.isMonsterDead()) {
 				return true;
 			}
+			System.out.println("You are in the last room.");
 			return false;
 		}
 		
@@ -85,7 +87,7 @@ public class Start {
 			}
 		}
 		
-		System.out.println("You kill the monster");
+		System.out.println("Monster is dead.");
 			
 	}
 	public Room makeRooms(Room start) {
