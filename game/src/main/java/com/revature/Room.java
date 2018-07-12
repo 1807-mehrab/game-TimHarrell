@@ -9,7 +9,7 @@ public class Room {
     private Room parent;
     private Monster monster;
     private Boolean lastRoom;
-    private static final int NUMBERNEXTS = 2;
+    //private static final int NUMBERNEXTS = 2;
     private static final String[] names = {
     		"room0", 
     		"room1", 

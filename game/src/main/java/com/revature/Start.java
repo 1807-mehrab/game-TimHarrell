@@ -59,7 +59,7 @@ public class Start {
 				System.out.println("invalid input.");
 			}
 			
-			
+			in.close();
 			return false;
 		}
 		else {
@@ -85,6 +85,9 @@ public class Start {
 			if(input == 1) {
 				currRoom.attackMonster(ATTACKPOWER);
 			}
+			
+			
+			fightIn.close();
 		}
 		
 		System.out.println("Monster is dead.");
